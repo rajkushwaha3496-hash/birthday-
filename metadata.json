@@ -1,0 +1,6 @@
+{
+  "name": "Happy Birthday Ranu Solanki | Romantic Surprise",
+  "description": "A luxury romantic birthday surprise website for Ranu Solanki featuring an interactive 3D cake, memories gallery, romantic letter, music player, and interactive gift box.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

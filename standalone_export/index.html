@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Ranu Solanki ❤️ | Romantic Surprise</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Floating Romantic Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header id="navbar">
+    <div class="nav-container">
+      <a href="#welcome" class="nav-brand">♥ Ranu Solanki</a>
+      <nav class="nav-links">
+        <a href="#celebration">Celebration</a>
+        <a href="#memories">Memories</a>
+        <a href="#letter">Love Letter</a>
+        <a href="#reasons">12 Reasons</a>
+        <a href="#surprise">Gift</a>
+      </nav>
+      <button class="celebrate-btn" onclick="celebrateBurst()">Celebrate Ranu 🎉</button>
+    </div>
+  </header>
+
+  <!-- Section 1: Welcome Screen -->
+  <section id="welcome" class="section welcome-section">
+    <div class="container welcome-content">
+      <div class="badge">A Special Day For Someone Special ❤️</div>
+      <h1 class="main-title">Happy Birthday, <br><span class="gold-text">Ranu Solanki</span> ❤️</h1>
+      <p class="subtitle">A digital love letter crafted with sweet surprises, laughter, and timeless devotion for the queen of my heart.</p>
+      <button class="enter-btn" onclick="enterSurprise()">Open Your Birthday Surprise ✨</button>
+    </div>
+  </section>
+
+  <!-- Section 2: Birthday Celebration & 3D Cake -->
+  <section id="celebration" class="section celebration-section">
+    <div class="container text-center">
+      <div class="section-tag">Make A Birthday Wish</div>
+      <h2 class="section-title">May All Your Dreams Come True, Ranu!</h2>
+      <p class="section-desc">Tap each candle or make a wish to blow them all out together.</p>
+
+      <div class="cake-container">
+        <!-- Candles -->
+        <div class="candles-row" id="candlesRow">
+          <div class="candle" onclick="blowCandle(this)"><div class="flame"></div><div class="wick"></div><div class="stick"></div></div>
+          <div class="candle" onclick="blowCandle(this)"><div class="flame"></div><div class="wick"></div><div class="stick"></div></div>
+          <div class="candle" onclick="blowCandle(this)"><div class="flame"></div><div class="wick"></div><div class="stick"></div></div>
+          <div class="candle" onclick="blowCandle(this)"><div class="flame"></div><div class="wick"></div><div class="stick"></div></div>
+          <div class="candle" onclick="blowCandle(this)"><div class="flame"></div><div class="wick"></div><div class="stick"></div></div>
+        </div>
+        <!-- 3 Tier Cake -->
+        <div class="cake-tier tier-top">RANU ❤️</div>
+        <div class="cake-tier tier-mid">Sweetest Birthday Wishes ✨</div>
+        <div class="cake-tier tier-bot">
+          <div class="script-text">Queen Ranu</div>
+          <div class="cake-sub">Forever In My Heart</div>
+        </div>
+        <div class="cake-stand"></div>
+      </div>
+
+      <div class="cake-controls">
+        <button class="primary-btn" onclick="blowAllCandles()">Blow All Candles 🎂</button>
+        <button class="secondary-btn" onclick="relightCandles()">Relight Candles 🕯️</button>
+      </div>
+      <div id="wishBanner" class="wish-banner" style="display:none;">
+        ❤️ Your silent wish has been sealed in love! May every star shine for you, Ranu! ✨
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Our Memories Gallery -->
+  <section id="memories" class="section memories-section">
+    <div class="container">
+      <div class="section-header-flex">
+        <div>
+          <div class="section-tag">Chapter 03 · Scrapbook of Us</div>
+          <h2 class="section-title">Our Beautiful Memories (30 Moments)</h2>
+          <p class="section-desc">Every photograph holds a piece of eternity with you.</p>
+        </div>
+      </div>
+
+      <!-- Polaroid Grid -->
+      <div class="polaroid-grid" id="memoriesGrid">
+        <!-- Injected via script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Special Birthday Letter -->
+  <section id="letter" class="section letter-section">
+    <div class="container text-center">
+      <div class="section-tag">Chapter 04 · From My Heart</div>
+      <h2 class="section-title">A Love Letter For Ranu</h2>
+
+      <div class="envelope-wrapper" id="envelopeWrapper" onclick="toggleLetter()">
+        <div class="wax-seal">
+          <div class="seal-inner">R</div>
+        </div>
+        <p class="envelope-hint">Tap to unseal the romantic letter</p>
+      </div>
+
+      <div id="letterPaper" class="letter-paper" style="display:none;">
+        <h3 class="letter-dear">Dearest Ranu,</h3>
+        <p class="letter-para">Today is the day the most beautiful soul was brought into this world—the person who brought warmth, light, and infinite kindness into my life. In every crowded room, my eyes will forever look for you first.</p>
+        <p class="letter-quote">"Loving you is the easiest, sweetest, and most sacred choice I have ever made."</p>
+        <p class="letter-para">I promise to hold your hand through every season, celebrate all your achievements, wipe away your worries, and remind you every morning how cherished you are.</p>
+        <p class="letter-sign">Forever & Always Yours,<br><span class="letter-sig-name">With All My Heart ❤️</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Reasons Why You Are Special -->
+  <section id="reasons" class="section reasons-section">
+    <div class="container text-center">
+      <div class="section-tag">Chapter 05 · 12 Reasons</div>
+      <h2 class="section-title">Why You Are Irreplaceable, Ranu</h2>
+      <p class="section-desc">Tap each card to reveal the special reason.</p>
+
+      <div class="reasons-grid" id="reasonsGrid">
+        <!-- 12 cards injected via script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Interactive Surprise Gift -->
+  <section id="surprise" class="section surprise-section">
+    <div class="container text-center">
+      <div class="section-tag">Chapter 07 · The Birthday Gift</div>
+      <h2 class="section-title">A Special Present Just For Ranu</h2>
+
+      <div id="giftBoxContainer" class="gift-box-wrap" onclick="openGiftBox()">
+        <div class="gift-box-3d">
+          <div class="gift-tag">To: Ranu Solanki ❤️<br><small>Click to open</small></div>
+        </div>
+      </div>
+
+      <div id="giftReveal" class="gift-reveal" style="display:none;">
+        <div class="heart-big">❤️</div>
+        <h3 class="gold-msg">"You deserve all the happiness in this world, Ranu! ❤️"</h3>
+        <div class="golden-ticket">
+          <h4>GOLDEN BIRTHDAY COUPON #RANU-FOREVER</h4>
+          <p>★ Unlimited Late Night Drives & Chai</p>
+          <p>★ Emergency Comfort Hugs & Favorite Desserts</p>
+          <p>★ Unconditional Love & Lifetime Loyalty</p>
+          <span class="auth">Authorized with endless devotion</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Final Birthday Screen -->
+  <footer class="final-screen">
+    <div class="container text-center">
+      <div class="final-heart">♥</div>
+      <h2 class="final-title">Happy Birthday, My Favourite Person ❤️</h2>
+      <p class="final-blessing">"May your life always be filled with love, laughter, beautiful memories and endless happiness."</p>
+      <button class="top-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})">Replay Birthday Surprise ↑</button>
+      <p class="copyright">Made with all my heart for Ranu Solanki · Forever & Always</p>
+    </div>
+  </footer>
+
+  <!-- Background Music Player Widget -->
+  <div class="music-player-fixed" id="musicPlayer">
+    <button id="musicToggleBtn" onclick="toggleMusic()" class="music-btn">▶</button>
+    <div class="music-meta">
+      <span class="track-title" id="musicTrackTitle">Ranu's Romantic Melody</span>
+      <div class="visualizer" id="visualizer">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <input type="file" id="localAudioFile" accept="audio/*" style="display:none;" onchange="loadLocalAudio(event)">
+    <button onclick="document.getElementById('localAudioFile').click()" class="upload-btn" title="Upload custom song">🎵 Upload MP3</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

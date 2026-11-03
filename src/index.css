@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-handwriting: 'Alex Brush', cursive;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-heading {
+    font-family: var(--font-serif);
+  }
+
+  .font-script {
+    font-family: var(--font-handwriting);
+  }
+}
+
+/* Custom 3D & Romantic Animations */
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px #f59e0b) drop-shadow(0 0 16px #f97316);
+  }
+  25% {
+    transform: scale(1.08, 0.95) rotate(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px #fbbf24) drop-shadow(0 0 20px #ea580c);
+  }
+  50% {
+    transform: scale(0.95, 1.05) rotate(-2deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 7px #f59e0b) drop-shadow(0 0 14px #f97316);
+  }
+  75% {
+    transform: scale(1.04, 1) rotate(1deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px #fbbf24) drop-shadow(0 0 18px #ea580c);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.5deg);
+  }
+}
+
+@keyframes balloonSway {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-24px) rotate(4deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(244, 114, 182, 0.35), 0 0 40px rgba(251, 113, 133, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(244, 114, 182, 0.6), 0 0 60px rgba(251, 113, 133, 0.4);
+  }
+}
+
+@keyframes roseGoldShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 1.2s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.animate-balloon {
+  animation: balloonSway 6s ease-in-out infinite;
+}
+
+.glow-romantic {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.text-rose-gold {
+  background: linear-gradient(135deg, #be185d 0%, #db2777 30%, #f472b6 60%, #e11d48 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-rose-gold-gradient {
+  background: linear-gradient(135deg, #fce7f3 0%, #ffe4e6 50%, #fecdd3 100%);
+}
+
+.bg-rose-gold-metallic {
+  background: linear-gradient(135deg, #f43f5e 0%, #fb7185 35%, #fda4af 65%, #e11d48 100%);
+}
+
+/* 3D Perspective container */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff0f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f472b6;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e11d48;
+}
